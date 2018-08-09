@@ -1,0 +1,25 @@
+.main-section{
+    width:100%;
+    background-image:url(../images/main-background.jpg);
+}
+
+.content{
+    max-width:1134px;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+
+}
+
+.section{
+}
+
+.footer{
+    background:black;
+}
+
+.slide-from-left{
+    overflow:hidden;
+    transition: transform 1s;
+    transform:translateX(-100%);
+}

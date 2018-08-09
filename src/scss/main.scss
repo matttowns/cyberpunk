@@ -1,0 +1,15 @@
+@import 'base/base';
+@import 'base/variables';
+
+@import 'mixins/breakpoints';
+
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+@import 'pages/news';
+
+@import 'components/gallery';
+@import 'components/signup';
+@import 'components/news-items';
+@import 'components/news-post';

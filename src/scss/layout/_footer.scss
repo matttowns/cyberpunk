@@ -1,0 +1,196 @@
+.footer-content{
+    color:white;
+    max-width:1134px;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    flex-flow: column;
+    @include breakpoint(ld){
+        border-left:1px solid rgb(34, 34, 34);
+        border-right:1px solid #222222;
+    }
+
+    .footer-links{
+        display:flex;
+        flex-flow:row;
+        flex-wrap:wrap;
+        padding:20px 10px;
+        order:1;
+        @include breakpoint(sd){
+            padding:80px 0 40px 0;
+
+
+        }
+        .footer-link{
+            margin:1em 0;
+            &:nth-of-type(2n-1){
+                .footer-link-content{
+                    justify-content:flex-start;
+                    @include breakpoint(sd){
+                        justify-content:center;
+                    }
+                }
+            }
+            &:nth-of-type(2n){
+                .footer-link-content{
+                    justify-content:flex-end;
+                    @include breakpoint(sd){
+                        justify-content:center;
+                    }
+                }
+            }
+            &:nth-child(n+5){
+                display:none;
+            }
+            width:50%;
+            @include breakpoint(sd){
+                width:25%;
+                &:nth-child(n+5){
+                    display:flex;
+                }
+                &:nth-child(-n+2){
+                    display:none;
+                }
+
+            }
+            font-size:.8125em;
+            text-align:center;
+            overflow:hidden;
+            color:white;
+            text-decoration:none;
+            &:visited{
+                color:white;
+            }
+            &:hover{
+                color:white;
+            }
+            .footer-link-content{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+
+                svg{
+                    padding-left:1.5em;
+                }
+            }
+        }
+    }
+    .footer-platforms{
+        display:flex;
+        flex-flow:row;
+        margin-bottom:40px;
+        width:100%;
+        justify-content:space-between;
+        order:2;
+        @include breakpoint(sd){
+            width:auto;
+            justify-content: center;
+        }
+        .footer-platform{
+            overflow:hidden;
+            margin:0 2em;
+        }
+    }
+    .footer-language{
+        display:flex;
+        flex-flow:row;
+        justify-content:center;
+        align-items:center;
+        margin-bottom:35px;
+        order:3;
+        .footer-language-content{
+            display:inline-block;
+            font-size:.8125em;
+            overflow:hidden;
+
+            .footer-language-controls{
+                display:flex;
+                align-items:center;
+                cursor:pointer;
+                .fa-globe-africa{
+                    font-size:1.5em;
+                    line-height:1.5em;
+                    color:cyan;
+                }
+                svg{
+                    margin: 0 .75em;
+                }
+            }
+        }
+    }
+
+    .footer-copyright{
+        max-width:445px;
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        color:#4d4d4d;
+        text-align:center;
+        line-height:1.3333333333333333333333333333333em;
+        font-size:.75em;
+        font-weight:300;
+        overflow:hidden;
+        margin-bottom:35px;
+        order:4;
+    }
+
+    .footer-games{
+        display:none;
+        @include breakpoint(sd){
+            display:flex;
+        }
+        flex-flow:row;
+        justify-content:space-between;
+        margin-bottom:50px;
+        max-width:500px;
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        order:5;
+        .footer-game{
+            display: flex;
+            flex-flow:row;
+            align-items:center;
+            overflow:hidden;
+            color:white;
+            text-decoration:none;            
+            &:hover, &:visited{
+                color:white;
+            }
+            .footer-game-title{
+                font-size:.8125em;
+            }
+            svg{
+                margin-left:20px;
+            }
+            img{
+                margin:0 25px;
+            }
+        }
+    }
+    .footer-logos{
+        display:flex;
+        flex-flow:row;
+        justify-content:space-between;
+        max-width:400px;
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        padding-bottom:35px;
+        order:2;
+        @include breakpoint(sd){
+            order:6;
+        }
+        .footer-logo{
+            overflow:hidden;
+            img{
+                height: 72px;
+                
+                max-height:100%;
+                max-width:100%;
+            }
+        }
+    }
+
+}

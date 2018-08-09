@@ -1,0 +1,20 @@
+body{
+    margin:0;
+    font-family:BlenderBookPro;
+}
+
+*:focus {
+    outline: none;
+}
+
+input, select, textarea, button{font-family:Yantramanav;}
+
+::placeholder{
+    font-family:BlenderBookPro;
+
+}
+
+@font-face {
+    font-family: BlenderBookPro;
+    src: url(../fonts/BlenderPro-Book);
+}

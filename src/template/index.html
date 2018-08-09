@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cyberpunk 2077 — from the creators of The Witcher 3: Wild Hunt</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <script defer src="js/font-awesome/all.js"></script> 
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav:300,400" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <header class="home-header">
+        <div class="header-video-container">
+            <video autoplay loop muted class="header-video">
+                    <source src="videos/header-video.mp4" type="video/mp4" playsinline="playslinline">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="header-content">
+            <div class="header-logos">
+                <div class="header-logo-left">
+                    <img src="images/badge-en.png" alt="">
+                </div>
+                <div class="header-logo-right">
+                    <img class="glitch-auto" src="images/cdprojektred-white.png" alt="">  
+                    <canvas class="header-logo-right-canvas"></canvas>
+                </div>
+                <div class="header-logo-main">
+                    <img  src="images/cyberpunk-logo.png" alt="">
+                </div>
+            </div>
+            <div class="header-icons">
+                <div class="header-play">
+                    <img class="header-play-image" src="images/play.png">
+                </div>
+                <div class="header-mouse"></div>
+            </div>
+
+        </div>
+    </header>
+    <main class="main-section">
+        <div class="content">
+            <section class="signup-section">
+                <div class="signup-intro">
+                        <strong class="signup-intro-headline slide-from-left">ALWAYS FIRST!</strong>
+                        <span class="signup-intro-text slide-from-left">Sign up to the Cyberpunk 2077 newsletter.</span>
+                </div>
+                <div class="signup-registration">
+                    <input class="registration-email" type="text" placeholder="Enter your email address"></input>
+                    <button class="registration-submit">Submit</button>
+                    <!--<div class="signup-declaration signup-open">
+                        <div class="checkbox"><input type="checkbox"></div>
+                        <p>I would like to receive news, special offers and other information from CD PROJEKT and I am 16 years old or older.</p>
+                        <p>CD PROJEKT will be responsible for your personal data. For more information please check our CD PROJEKT Privacy Policy</p>
+                    </div>-->
+                </div>
+                <div class="signup-social">
+                    <div class="social-media">
+                        <a href="#" class="social-media-link">
+                            <div class="icon">
+                                    <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <span class="signup-social-title slide-from-left">_facebook</span>
+                        </a>
+                        <a href="#" class="social-media-link">
+                            <div class="icon">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            <span class="signup-social-title slide-from-left">_twitter</span>
+                        </a>                        
+                        <a href="#" class="social-media-link">
+                            <div class="icon">
+                                <i class="far fa-comment"></i>
+                            </div>
+                            <span class="signup-social-title slide-from-left">_forum</span>
+                        </a>
+                        <a href="#" class="social-media-link">
+                            <div class="icon">
+                                <i class="fab fa-discord"></i>
+                            </div>
+                            <span class="signup-social-title slide-from-left">_discord</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="gallery">
+                <div class="gallery-container">
+                    <div class="gallery-items">
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-1" class="glitch" src="images/gallery-1.png" alt=""></a></div>
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-2" class="glitch" src="images/gallery-2.png" alt=""></a></div>
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-3" class="glitch" src="images/gallery-3.png" alt=""></a></div>
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-4" class="glitch" src="images/gallery-4.png" alt=""></a></div>
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-5" class="glitch" src="images/gallery-5.png" alt=""></a></div>
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-6" class="glitch" src="images/gallery-6.png" alt=""></a></div>
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-7" class="glitch" src="images/gallery-7.png" alt=""></a></div>
+                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-8" class="glitch" src="images/gallery-8.png" alt=""></a></div>
+                    </div>
+                    <div class="gallery-canvases">
+                        <canvas id="gallery-item-canvas-1" class="gallery-item-canvas" data-id="1"></canvas>
+                        <canvas id="gallery-item-canvas-2" class="gallery-item-canvas" data-id="2"></canvas>    
+                        <canvas id="gallery-item-canvas-3" class="gallery-item-canvas" data-id="3"></canvas>
+                        <canvas id="gallery-item-canvas-4" class="gallery-item-canvas" data-id="4"></canvas>                    
+                    </div>
+                    <div id="gallery-previous-button" class="gallery-previous"><i class="fal fa-long-arrow-left"></i></div>    
+                    <div id="gallery-next-button" class="gallery-next"><i class="fal fa-long-arrow-right"></i></div>    
+                </div>
+                <div class="gallery-options">
+                    <button class="gallery-option active"><span>Screenshots</span></button>
+                    <button class="gallery-option"><span>Wallpapers</span></button>
+                    
+                </div>
+            </section>
+            <section class="news-headlines">
+                <div class="news-container">
+                    <div class="news-items">
+                        <div class="news-item">
+                            <a href="#">
+                                <div class="news-item-content">
+                                        <span class="news-date slide-from-left">26.06.2018</span>
+                                        <div class="news-item-header slide-from-left">
+                                            <span>Cyberpunk 2077 E3 2018 Trailer Frame by Frame EP03</span>
+                                        </div>
+                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">
+                                <div class="news-item-content">
+                                        <span class="news-date slide-from-left">19.06.2018</span>
+                                        <div class="news-item-header slide-from-left">
+                                            <span>Cyberpunk 2077 E3 2018 Trailer Frame by Frame EP01</span>
+                                        </div>
+                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">
+                                <div class="news-item-content">
+                                        <span class="news-date slide-from-left">12.06.2018</span>
+                                        <div class="news-item-header slide-from-left">
+                                            <span>Concept Art from the Trailer!</span>
+                                        </div>
+                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>        
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">
+                                <div class="news-item-content">
+                                        <span class="news-date slide-from-left">21.06.2018</span>
+                                        <div class="news-item-header slide-from-left">
+                                            <span>Cyberpunk 2077 E3 2018 Trailer Frame by Frame EP02</span>
+                                        </div>
+                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>            
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">
+                                <div class="news-item-content">    
+                                        <span class="news-date slide-from-left">15.06.2018</span>
+                                        <div class="news-item-header slide-from-left">
+                                            <span>Good show, good noise!</span>
+                                        </div>
+                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-item news-item-more-news">
+                            <a href="">
+                                <div class="news-item-content">    
+                                    <span class="news-item-more">
+                                        See more news <i class="fal fa-long-arrow-right"></i>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                    <a href="" class="footer-link "><div class="slide-from-left footer-link-content">thewitcher.com <i class="fal fa-long-arrow-right"></i></div></a>
+                    <a href="" class="footer-link "><div class="slide-from-left footer-link-content">playgwent.com <i class="fal fa-long-arrow-right"></i></div></a>
+                <a href="" class="footer-link "><div class="slide-from-left footer-link-content">Terms of Use &amp; Privacy Policy <i class="fal fa-long-arrow-right"></i></div></a>
+                <a href="" class="footer-link"><div class="slide-from-left footer-link-content">Careers <i class="fal fa-long-arrow-right"></i></div></a>
+                <a href="" class="footer-link"><div class="slide-from-left footer-link-content">facebook.com/CyberpunkGame <i class="fal fa-long-arrow-right"></i></div></a>
+                <a href="" class="footer-link"><div class="slide-from-left footer-link-content">twitter.com/cyberpunkgame <i class="fal fa-long-arrow-right"></i></div></a>
+            </div>
+            <div class="footer-platforms">
+                <div class="footer-platform"><img class="slide-from-left" src="images/xbox.png" alt=""></div>
+                <div class="footer-platform"><img class="slide-from-left" src="images/ps4.png" alt=""></div>
+                <div class="footer-platform"><img class="slide-from-left" src="images/pc.png" alt=""></div>
+            </div>
+            <div class="footer-language">
+                <div class="footer-language-content">
+                    <div class="footer-language-controls slide-from-left">
+                        <i class="far fa-globe-africa"></i><span class="footer-language-name">English</span><i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>                  
+            </div>
+            <div class="footer-copyright">
+                <div class="slide-from-left" >
+                    CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A. © 2018 CD PROJEKT S.A. All rights reserved. All other copyrights and trademarks are the property of their respective owners.
+                </div>
+            </div>
+            <div class="footer-games">
+                <a class="footer-game" href=""><img class="slide-from-left" src="images/witcher.png" alt=""><div class="footer-game-title slide-from-left">thewitcher.com <i class="fal fa-long-arrow-right"></i></div></a>
+                <a class="footer-game" href=""><img class="slide-from-left" src="images/gwent.png" alt=""><div class="footer-game-title slide-from-left">playgwent.com <i class="fal fa-long-arrow-right"></i></div></a>
+            </div>
+            <div class="footer-logos">
+                    <div class="footer-logo"><img class="slide-from-left" src="images/CDProjektRed-White.svg" alt=""></div>
+                    <div class="footer-logo"><img class="slide-from-left" src="images/esrb.png" alt=""></div>
+                </div>
+        </div>
+        <script src="js/scripts.js"></script>
+    </footer>
+  </body>
+</html>

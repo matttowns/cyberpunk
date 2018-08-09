@@ -1,0 +1,147 @@
+.header-video-container{
+    height:100vh;
+    overflow:hidden;
+    background-image:url(../images/mobile-header.jpg);
+    background-position:center;
+    background-size:cover;
+    @include breakpoint(sd){
+        background-image:none;
+    }
+    .header-video{
+        display:none;
+        object-fit:cover;
+        height:100%;
+        width:100%;
+        object-position: center center;
+        @include breakpoint(sd){
+            display:block;
+        }
+    }
+}
+
+body{
+    margin:0;
+}
+
+.home-header{
+    position:relative;
+}
+
+.header-content{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    @include breakpoint(sd){
+        background:url(../images/video-bottom.png) no-repeat center bottom;
+    }
+    .header-logos{
+        display:flex;
+        flex-flow:row;
+        justify-content: space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        margin:19px 25px;
+        @include breakpoint(sd){
+            margin:38px 50px;
+        }
+        .header-logo-left{
+            width:50%;
+            img{
+                display:block;
+                max-width:151px;
+                max-height:51px;
+                width: auto;
+                height: auto; 
+            }
+         
+        }
+        .header-logo-right{
+            display:block;
+            width:50%;
+            height:69px;
+            position:relative;
+            display:flex;
+            img{
+                width:200px;
+                height:69px;
+                max-height:100%;
+                max-width:100%;
+            }
+            .header-logo-right-canvas{
+
+                max-height:100%;
+                max-width:100%;
+                width:200px;
+                margin-left:auto;
+
+
+            }
+        }
+        .header-logo-main{
+            width:100%;
+            text-align:center;
+            img{
+                max-width:100%;
+                max-height:100%;
+            }
+            @include breakpoint(sd){
+                display:none;
+            }
+            
+        }
+    }
+
+    .header-icons{
+        position:absolute;
+        height: 100%;
+        width:100%;
+        top:0;
+        left:0;
+
+        .header-play{
+            position: relative;
+            top:57%;
+            width:250px;
+            text-align: center;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .header-mouse{
+            display: block;
+            height: 45px;
+            width:28px;
+            border-radius:25px;
+            border:2px solid white;
+            margin-left:auto;
+            margin-right:auto;
+            top:75%;
+            position:relative;
+            display:none;
+            @include breakpoint(sd){
+                display:block;
+            }
+            &:before{
+                content:'';
+                display: block;
+                position: relative;
+                width:3px;
+                background-color:white;
+                height:8px;
+                margin-left:auto;
+                margin-right:auto;
+                top:8px;
+                animation-name: mousewheel;
+                animation-duration: 2s;
+                animation-iteration-count:infinite;
+            }
+        }
+    }
+}
+
+@keyframes mousewheel {
+    0%   {transform:translateY(0); opacity: 1;} 
+    100%   {transform:translateY(16px); opacity:0;} 
+
+}
