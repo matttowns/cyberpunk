@@ -16,7 +16,7 @@
     }
         
     @else if $class == ld {
-      @media (min-width: 1200px) { @content; }
+      @media (min-width: 1250px) { @content; }
     }
   
   }

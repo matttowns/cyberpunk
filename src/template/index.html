@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cyberpunk 2077 — from the creators of The Witcher 3: Wild Hunt</title>
   <link rel="stylesheet" href="css/main.css" type="text/css">
   <script defer src="js/font-awesome/all.js"></script> 
@@ -15,29 +15,39 @@
   <meta name="theme-color" content="#ffffff">
   </head>
   <body>
+      <div class="full-gallery" id="full-gallery">
+          <button class="close-gallery" id="full-gallery-close"><i class="fal fa-times"></i></button>
+          <div id="full-gallery-previous-button" class="gallery-previous"><i class="fal fa-long-arrow-left"></i></div>    
+          <div id="full-gallery-next-button" class="gallery-next"><i class="fal fa-long-arrow-right"></i></div>   
+          <figure>
+              <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" class="gallery-image" id="gallery-image">
+          </figure>
+      </div>
+      <div class="overlay" id="overlay">
+      </div>
     <header class="home-header">
         <div class="header-video-container">
             <video autoplay loop muted class="header-video">
-                    <source src="videos/header-video.mp4" type="video/mp4" playsinline="playslinline">
+                    <source src="videos/header-video.mp4" type="video/mp4"><!-- playsinline="playslinline"-->
                     Your browser does not support the video tag.
             </video>
         </div>
         <div class="header-content">
             <div class="header-logos">
                 <div class="header-logo-left">
-                    <img src="images/badge-en.png" alt="">
+                    <img src="images/badge-en.png" alt="E3 2018 - Over 100 Awards">
                 </div>
                 <div class="header-logo-right">
-                    <img class="glitch-auto" src="images/cdprojektred-white.png" alt="">  
+                    <img class="glitch-auto" src="images/cdprojektred-white.png" alt="CD Projekt Red">  
                     <canvas class="header-logo-right-canvas"></canvas>
                 </div>
                 <div class="header-logo-main">
-                    <img  src="images/cyberpunk-logo.png" alt="">
+                    <img  src="images/cyberpunk-logo.png" alt="Cyberpunk">
                 </div>
             </div>
             <div class="header-icons">
                 <div class="header-play">
-                    <img class="header-play-image" src="images/play.png">
+                    <img class="header-play-image" src="images/play.png" alt="Play Video">
                 </div>
                 <div class="header-mouse"></div>
             </div>
@@ -46,19 +56,29 @@
     </header>
     <main class="main-section">
         <div class="content">
+            <div class="pulse"></div>
             <section class="signup-section">
                 <div class="signup-intro">
                         <strong class="signup-intro-headline slide-from-left">ALWAYS FIRST!</strong>
                         <span class="signup-intro-text slide-from-left">Sign up to the Cyberpunk 2077 newsletter.</span>
                 </div>
-                <div class="signup-registration">
-                    <input class="registration-email" type="text" placeholder="Enter your email address"></input>
-                    <button class="registration-submit">Submit</button>
-                    <!--<div class="signup-declaration signup-open">
-                        <div class="checkbox"><input type="checkbox"></div>
-                        <p>I would like to receive news, special offers and other information from CD PROJEKT and I am 16 years old or older.</p>
-                        <p>CD PROJEKT will be responsible for your personal data. For more information please check our CD PROJEKT Privacy Policy</p>
-                    </div>-->
+                <div class="signup-registration" id="registration-section">
+                    <form action="javascript:return false;" class="signup-form">
+                        <div class="signup-form-content">
+                            <label id="registration-email-label" for="registration-email-input" class="registration-email-label">Enter your email address</label>
+                            <input id="registration-email-input" name="email" class="registration-email" type="text" autocomplete="off"/>
+                            <div id="registration-cursor" class="registration-email-cursor"></div>
+                            <button class="registration-submit" id="registration-submit-button" disabled>Submit</button>
+                            
+                        </div> 
+                        <div class="signup-declaration-container" id="signup-declaration">
+                            <label class="checkbox-container"><input type="checkbox" class="checkbox" id="registration-declaration"><span class="checkmark"></span></label>
+                            <div class="signup-declaration-text">
+                                    <p>I would like to receive news, special offers and other information from CD PROJEKT and I am 16 years old or older.</p>
+                                    <p>CD PROJEKT will be responsible for your personal data. For more information please check our CD PROJEKT Privacy Policy</p>  
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="signup-social">
                     <div class="social-media">
@@ -91,28 +111,48 @@
             </section>
             <section class="gallery">
                 <div class="gallery-container">
-                    <div class="gallery-items">
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-1" class="glitch" src="images/gallery-1.png" alt=""></a></div>
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-2" class="glitch" src="images/gallery-2.png" alt=""></a></div>
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-3" class="glitch" src="images/gallery-3.png" alt=""></a></div>
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-4" class="glitch" src="images/gallery-4.png" alt=""></a></div>
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-5" class="glitch" src="images/gallery-5.png" alt=""></a></div>
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-6" class="glitch" src="images/gallery-6.png" alt=""></a></div>
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-7" class="glitch" src="images/gallery-7.png" alt=""></a></div>
-                        <div class="gallery-item"><a class="gallery-item-link" href=""><img id="gallery-image-8" class="glitch" src="images/gallery-8.png" alt=""></a></div>
+                    <div class="gallery-items" id="gallery-item-list">
+                        <div class="gallery-item"><img id="gallery-image-0" class="glitch screenshot-item" src="images/screenshots/screenshot-0.jpg" alt="" data-id="0"></div>
+                        <div class="gallery-item"><img id="gallery-image-1" class="glitch screenshot-item" src="images/screenshots/screenshot-1.jpg" alt="" data-id="1"></div>
+                        <div class="gallery-item"><img id="gallery-image-2" class="glitch screenshot-item" src="images/screenshots/screenshot-2.jpg" alt="" data-id="2"></div>
+                        <div class="gallery-item"><img id="gallery-image-3" class="glitch screenshot-item" src="images/screenshots/screenshot-3.jpg" alt="" data-id="3"></div>
+                        <div class="gallery-item"><img id="gallery-image-4" class="glitch screenshot-item" src="images/screenshots/screenshot-4.jpg" alt="" data-id="4"></div>
+                        <div class="gallery-item"><img id="gallery-image-5" class="glitch screenshot-item" src="images/screenshots/screenshot-5.jpg" alt="" data-id="5"></div>
+                        <div class="gallery-item"><img id="gallery-image-6" class="glitch screenshot-item" src="images/screenshots/screenshot-6.jpg" alt="" data-id="6"></div>
+                        <div class="gallery-item"><img id="gallery-image-7" class="glitch screenshot-item" src="images/screenshots/screenshot-7.jpg" alt="" data-id="7"></div>
+                        <div class="gallery-item"><img id="gallery-image-8" class="glitch screenshot-item" src="images/screenshots/screenshot-8.jpg" alt="" data-id="8"></div>
+                        <div class="gallery-item"><img id="gallery-image-9" class="glitch screenshot-item" src="images/screenshots/screenshot-9.jpg" alt="" data-id="9"></div>
+                        <div class="gallery-item"><img id="gallery-image-10" class="glitch screenshot-item" src="images/screenshots/screenshot-10.jpg" alt="" data-id="10"></div>
+                        <div class="gallery-item"><img id="gallery-image-11" class="glitch screenshot-item" src="images/screenshots/screenshot-11.jpg" alt="" data-id="11"></div>
+                        <div class="gallery-item"><img id="gallery-image-12" class="glitch screenshot-item" src="images/screenshots/screenshot-12.jpg" alt="" data-id="12"></div>
+                        <div class="gallery-item"><img id="gallery-image-13" class="glitch screenshot-item" src="images/screenshots/screenshot-13.jpg" alt="" data-id="13"></div>
+                        <div class="gallery-item"><img id="gallery-image-14" class="glitch screenshot-item" src="images/screenshots/screenshot-14.jpg" alt="" data-id="14"></div>
+                        <div class="gallery-item"><img id="gallery-image-15" class="glitch screenshot-item" src="images/screenshots/screenshot-15.jpg" alt="" data-id="15"></div>
+                        <div class="gallery-item"><img id="gallery-image-16" class="glitch screenshot-item" src="images/screenshots/screenshot-16.jpg" alt="" data-id="16"></div>
+                        <div class="gallery-item"><img id="gallery-image-17" class="glitch screenshot-item" src="images/screenshots/screenshot-17.jpg" alt="" data-id="17"></div>
+                        <div class="gallery-item"><img id="gallery-image-18" class="glitch screenshot-item" src="images/screenshots/screenshot-18.jpg" alt="" data-id="18"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-0" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-0.jpg" data-src="images/wallpapers/wallpaper-0.jpg" data-mobile="images/wallpapers/mobile-wallpaper-0.jpg" alt="" data-id="0"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-1" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-1.jpg" data-src="images/wallpapers/wallpaper-1.jpg" data-mobile="images/wallpapers/mobile-wallpaper-1.jpg" alt="" data-id="1"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-2" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-2.jpg" data-src="images/wallpapers/wallpaper-2.jpg" data-mobile="images/wallpapers/mobile-wallpaper-2.jpg" alt="" data-id="2"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-3" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-3.jpg" data-src="images/wallpapers/wallpaper-3.jpg" data-mobile="images/wallpapers/mobile-wallpaper-3.jpg" alt="" data-id="3"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-4" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-4.jpg" data-src="images/wallpapers/wallpaper-4.jpg" data-mobile="images/wallpapers/mobile-wallpaper-4.jpg" alt="" data-id="4"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-5" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-5.jpg" data-src="images/wallpapers/wallpaper-5.jpg" data-mobile="images/wallpapers/mobile-wallpaper-5.jpg" alt="" data-id="5"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-6" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-6.jpg" data-src="images/wallpapers/wallpaper-6.jpg" data-mobile="images/wallpapers/mobile-wallpaper-6.jpg" alt="" data-id="6"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-7" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-7.jpg" data-src="images/wallpapers/wallpaper-7.jpg" data-mobile="images/wallpapers/mobile-wallpaper-7.jpg" alt="" data-id="7"></div>
+                        <div class="gallery-item"><img id="wallpaper-image-8" class="glitch wallpaper-item" src="images/wallpapers/wallpaper-8.jpg" data-src="images/wallpapers/wallpaper-8.jpg" data-mobile="images/wallpapers/mobile-wallpaper-8.jpg" alt="" data-id="8"></div>
                     </div>
-                    <div class="gallery-canvases">
-                        <canvas id="gallery-item-canvas-1" class="gallery-item-canvas" data-id="1"></canvas>
-                        <canvas id="gallery-item-canvas-2" class="gallery-item-canvas" data-id="2"></canvas>    
-                        <canvas id="gallery-item-canvas-3" class="gallery-item-canvas" data-id="3"></canvas>
-                        <canvas id="gallery-item-canvas-4" class="gallery-item-canvas" data-id="4"></canvas>                    
+                    <div class="gallery-canvases" id="gallery-canvas-list">
+                        <canvas id="gallery-item-canvas-0" class="gallery-item-canvas" data-id="0"></canvas>
+                        <canvas id="gallery-item-canvas-1" class="gallery-item-canvas" data-id="1"></canvas>    
+                        <canvas id="gallery-item-canvas-2" class="gallery-item-canvas" data-id="2"></canvas>
+                        <canvas id="gallery-item-canvas-3" class="gallery-item-canvas" data-id="3"></canvas>                    
                     </div>
                     <div id="gallery-previous-button" class="gallery-previous"><i class="fal fa-long-arrow-left"></i></div>    
                     <div id="gallery-next-button" class="gallery-next"><i class="fal fa-long-arrow-right"></i></div>    
                 </div>
                 <div class="gallery-options">
-                    <button class="gallery-option active"><span>Screenshots</span></button>
-                    <button class="gallery-option"><span>Wallpapers</span></button>
+                    <button id="screenshot-button" class="gallery-option active"><span>Screenshots</span></button>
+                    <button id="wallpaper-button" class="gallery-option"><span>Wallpapers</span></button>
                     
                 </div>
             </section>
@@ -126,7 +166,7 @@
                                         <div class="news-item-header slide-from-left">
                                             <span>Cyberpunk 2077 E3 2018 Trailer Frame by Frame EP03</span>
                                         </div>
-                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>
+                                        <div class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></div>
 
                                 </div>
                             </a>
@@ -138,7 +178,7 @@
                                         <div class="news-item-header slide-from-left">
                                             <span>Cyberpunk 2077 E3 2018 Trailer Frame by Frame EP01</span>
                                         </div>
-                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>
+                                        <div class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></div>
                                 </div>
                             </a>
                         </div>
@@ -149,7 +189,7 @@
                                         <div class="news-item-header slide-from-left">
                                             <span>Concept Art from the Trailer!</span>
                                         </div>
-                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>        
+                                        <div class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></div>
                                 </div>
                             </a>
                         </div>
@@ -160,7 +200,7 @@
                                         <div class="news-item-header slide-from-left">
                                             <span>Cyberpunk 2077 E3 2018 Trailer Frame by Frame EP02</span>
                                         </div>
-                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>            
+                                        <div class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></div>
                                 </div>
                             </a>
                         </div>
@@ -171,16 +211,16 @@
                                         <div class="news-item-header slide-from-left">
                                             <span>Good show, good noise!</span>
                                         </div>
-                                        <button class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></button>
+                                        <div class="news-button slide-from-left"><span>More <i class="fal fa-long-arrow-right"></i></span></div>
                                 </div>
                             </a>
                         </div>
                         <div class="news-item news-item-more-news">
                             <a href="">
                                 <div class="news-item-content">    
-                                    <span class="news-item-more">
-                                        See more news <i class="fal fa-long-arrow-right"></i>
-                                    </span>
+                                    <div class="news-item-more">
+                                        <span> See more news <i class="fal fa-long-arrow-right"></i></span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
@@ -189,7 +229,7 @@
             </section>
         </div>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-content">
             <div class="footer-links">
                     <a href="" class="footer-link "><div class="slide-from-left footer-link-content">thewitcher.com <i class="fal fa-long-arrow-right"></i></div></a>
@@ -204,11 +244,52 @@
                 <div class="footer-platform"><img class="slide-from-left" src="images/ps4.png" alt=""></div>
                 <div class="footer-platform"><img class="slide-from-left" src="images/pc.png" alt=""></div>
             </div>
-            <div class="footer-language">
-                <div class="footer-language-content">
-                    <div class="footer-language-controls slide-from-left">
+            <div class="footer-language" >
+                <div class="footer-language-content" id="footer-language-dropdown" >
+                    <div class="footer-language-controls slide-from-left" >
                         <i class="far fa-globe-africa"></i><span class="footer-language-name">English</span><i class="fas fa-chevron-down"></i>
                     </div>
+                    <ul class="language-list">
+                        <li>
+                            <a href="#">English</a>
+                        </li>
+                        <li>
+                            <a href="#">Русский</a>
+                        </li>
+                        <li>
+                            <a href="#">Deutsch</a>
+                        </li>
+                        <li>
+                            <a href="#">Polski</a>
+                        </li>
+                        <li>
+                            <a href="#">Português (BR)</a>
+                        </li>
+                        <li>
+                            <a href="#">Français</a>
+                        </li>
+                        <li>
+                            <a href="#">Español</a>
+                        </li>
+                        <li>
+                            <a href="#">Español (MX)</a>
+                        </li>
+                        <li>
+                            <a href="#">Italiano</a>
+                        </li>
+                        <li>
+                            <a href="#">日本語</a>
+                        </li>
+                        <li>
+                            <a href="#">한국어</a>
+                        </li>
+                        <li>
+                            <a href="#">简体中文</a>
+                        </li>
+                        <li>
+                            <a href="#">繁體中文</a>
+                        </li>
+                    </ul>
                 </div>                  
             </div>
             <div class="footer-copyright">
@@ -222,7 +303,7 @@
             </div>
             <div class="footer-logos">
                     <div class="footer-logo"><img class="slide-from-left" src="images/CDProjektRed-White.svg" alt=""></div>
-                    <div class="footer-logo"><img class="slide-from-left" src="images/esrb.png" alt=""></div>
+                    <div class="footer-logo"><img class="slide-from-left" src="images/esrb.png" alt="" id="tests"></div>
                 </div>
         </div>
         <script src="js/scripts.js"></script>

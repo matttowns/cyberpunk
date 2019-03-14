@@ -5,24 +5,45 @@
     color:white;
     flex-wrap:wrap;
     flex:1;
-    .signup-declaration{
+    .signup-form{
+        margin:2em 10%;
+        width:100%;
+    }
+    .signup-declaration-container{
         display:none;
+        margin-top:1em;
         &.signup-open{
             display:flex;
+            flex-flow:row;
+            flex-wrap:nowrap;
+        }
+        .signup-declaration-text{
+            padding-left:.5em;
+            color:$mainGrey;
+            font-size:.875em;
+            font-weight:300;
+            line-height:1.071428571428571em;
+            p{
+                margin-top:0;
+            }
         }
     }
     &.fixed{
-        position:fixed;
-        top:0;
-        width:100%;
-        max-width: 1134px;
-        z-index:999;
+        @include breakpoint(md){
+            position:fixed;
+            top:0;
+            width:100%;
+            max-width: 1134px;
+            z-index:999;
+        }
     }
     .signup-intro{
         width:100%;
         @include breakpoint(sd){
+            width:calc(50% - 2px);
+        }
+        @include breakpoint(md){
             width:30%;
-            max-height:100px;
         }
         height:100px;
         display:flex;
@@ -32,90 +53,163 @@
         overflow:hidden;
         text-align:center;
         .signup-intro-headline{
-            color:yellow;
+            color:$mainYellow;
             font-weight:500;
-            margin:.25em 0;
+            margin:0;
             width:100%;
+            font-size:1.25em;
 
         }
         .signup-intro-text{
-            margin:.25em 0;
+            margin: 0;
             color:lightgray;
             width:100%;
-
+            font-size:1.125em;
+            color:#8c8c8c;
         }
 
     }
     .signup-registration{
         width:100%;
         margin-bottom:2em;
+        display:flex;
+        flex-flow:row;
+        justify-content: center;
+        position:relative;
+        flex-wrap:wrap;
         @include breakpoint(sd){
+            width:50%;
+        }
+        @include breakpoint(md){
             width:calc(40% - 2px);
-            height:100px;
             margin-bottom:0;
         }
         border-right:1px solid #222222;
         border-left:1px solid #222222;
-        display:flex;
-        flex-flow:row;
-        align-items: center;
-        justify-content: center;
-        position:relative;
-        flex-wrap:wrap;
-
-        .registration-email{
-            width:80%;
-            border:none;
-            border-bottom:1px solid yellow;
-            background-color:transparent;
-            padding:.5em;
+        
+        .signup-form-content{
+            display:flex;
+            flex-flow:row;
+            justify-content: center;
+            position:relative;
+            flex-wrap:wrap;
+            font-family:BlenderBookPro;
+            @include breakpoint(sd){
+                flex-wrap:nowrap;
+            }
+        }
+        .registration-email-label{
+            position:absolute;
+            left:10px;
+            opacity:.5;
             color:white;
+            transition:transform .3s linear;
+            font-weight:300;
+            font-family:BlenderBookPro;
+            z-index:1;
+            top:8px;
+            font-size:.9375em;
+            &.registration-email-entered{
+                color:cyan;
+                opacity:1;
+                transform:translate(-10px,-100%);
+                &.invalid-email{
+                    color:$errorColor;
+                }
+            } 
+        }
+        .registration-email{
+            width:100%;
+            @include breakpoint(sd){
+                width:80%;
+            }
+            border:none;
+            border-bottom:1px solid $mainYellow;
+            background-color:transparent;
+            padding:.5em 0;
+            color:$mainGrey;
             min-width:250px;
             font-size:.9375em;
+            z-index:2;
+            caret-color:transparent;            
+            &:focus {
+                outline: none;
+            }
+            &.value-entered{
+                caret-color:auto;
+            }
+
+        }
+        .registration-email-cursor{
+            height:27.5%;
+            width:5px;
+            background-color:$mainYellow;
+            position:absolute;
+            left:0;
+            top:5px;
+            animation:blink 1s infinite step-end;
             @include breakpoint(sd){
-                width:auto;
+                height:70%;
+            }
+            &.entered{
+                background-color:$mainGrey;
+            }
+            &.hidden{
+                display:none;
             }
         }
         .registration-submit{
             font-family:BlenderBookPro;
-            background-color:yellow;
-            color:black;
+            background-color:$mainYellow;
             padding:.75em 2em;
             border:none;
+            cursor:pointer;
             font-size:.9375em;     
             margin:.5em;          
             text-transform:uppercase;
+            width:125px;
+            color:black;
             @include breakpoint(sd){
-                font-family:Yantramanav;
+                color:white;
+                width:20%;
+            }
+            &:disabled{
+                color:black;
+                opacity:.25;
+                @include breakpoint(sd){
+                    color:$mainGrey;
+                    cursor:default;
+                    opacity:1;
+                }
+                
+            }
+            @include breakpoint(sd){
                 background-color:transparent;
-                border-bottom:1px solid yellow;
-                color:lightgrey;
+                border-bottom:1px solid $mainYellow;
                 text-transform:uppercase;
                 padding:.5em;
                 margin:0;
             }
-
         }
-
-
     }
     .signup-social{
         width:100%;
         border-top:1px solid #1e1e1e;
         padding:1em 0;
-        @include breakpoint(sd){
+        @include breakpoint(md){
             width:30%;
             border-top:none;
         }
-        max-height:100px;
         display:flex;
-        align-items: center;
+        align-items: flex-start;
         .social-media{
             width:100%;
             display:flex;
             justify-content:space-evenly;
             align-items: center;
-
+            @include edge(){
+                justify-content: space-around;
+            }
             .social-media-link{
                 text-decoration:none;
                 color:white;
@@ -137,7 +231,7 @@
                 svg{
                     margin-left:auto;
                     margin-right:auto;
-                    color:yellow;
+                    color:$mainYellow;
                 }
                 text-align:center;
                 span{
@@ -158,4 +252,9 @@
     51% {transform:translateY(-1em); opacity:0}
     100%   {transform:translateY(0); opacity:1} 
 
+}
+
+@keyframes blink{
+    0% {visibility:visible;}
+    50%{ visibility:hidden;}
 }

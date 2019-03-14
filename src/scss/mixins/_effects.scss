@@ -1,0 +1,14 @@
+@mixin underlineGradient($from, $to, $thickness){
+    @if $thickness == 'thick'{
+        background-image: linear-gradient(to bottom, $from calc(100% - 3px), $to 3px);
+        @include edge(){
+            background-image: linear-gradient($from 0.9875em, $to 0.0125em)
+        }
+    }
+    @else if $thickness == 'thin'{
+        background-image: linear-gradient(to bottom, $from calc(100% - 1px), $to 1px);
+        @include edge(){
+            background-image: linear-gradient($from 0.9875em, $to 0.0125em)
+        }
+    }
+}

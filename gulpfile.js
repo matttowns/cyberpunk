@@ -7,7 +7,8 @@ const
   // source and build folders
   dir = {
     src         : 'src/',
-    build       : '../../wamp64/www/cyberpunk/'
+    //build       : '../../wamp64/www/cyberpunk/'
+    build       : 'C:/wamp64/www/cyberpunk/'
   },
 
   // Gulp and plugins
@@ -21,14 +22,14 @@ const
   deporder      = require('gulp-deporder'),
   concat        = require('gulp-concat'),
   stripdebug    = require('gulp-strip-debug'),
-  babel        = require('gulp-babel'),
+  babel         = require('gulp-babel'),
   uglify        = require('gulp-uglify'),
-  wait          = require('gulp-wait')
+  wait          = require('gulp-wait'),
+  autoprefixer  = require('autoprefixer');
 ;
 
 // Browser-sync
 var browsersync = false;
-
 
 // PHP settings
 const php = {
@@ -97,10 +98,7 @@ var css = {
       require('postcss-assets')({
         loadPaths: ['images/'],
         basePath: dir.build,
-        baseUrl: '/wp-content/themes/photography/'
-      }),
-      require('autoprefixer')({
-        browsers: ['last 2 versions', '> 2%']
+        baseUrl: '/'
       }),
       require('css-mqpacker'),
       require('cssnano')
@@ -112,6 +110,7 @@ var css = {
     return gulp.src(css.src)
       .pipe(wait(1500))
       .pipe(sass(css.sassOpts))
+      .pipe(postcss([ autoprefixer() ]))
       .pipe(cleancss({compatibility: 'ie8'}))
       .pipe(gulp.dest(css.build))
       .pipe(browsersync ? browsersync.reload({ stream: true }) : gutil.noop());
@@ -148,7 +147,7 @@ gulp.task('build', ['php', 'css', 'js', 'html', 'videos']);
 
 // Browsersync options
 const syncOpts = {
-    proxy       : 'localhost:8080/cyberpunk',
+    proxy       : 'localhost/cyberpunk',
     files       : dir.build + '**/*',
     open        : false,
     notify      : false,

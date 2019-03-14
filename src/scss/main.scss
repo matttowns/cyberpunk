@@ -2,6 +2,8 @@
 @import 'base/variables';
 
 @import 'mixins/breakpoints';
+@import 'mixins/compatibility';
+@import 'mixins/effects';
 
 @import 'layout/header';
 @import 'layout/main';
@@ -9,7 +11,10 @@
 
 @import 'pages/news';
 
+@import 'components/checkbox';
+@import 'components/full-gallery';
 @import 'components/gallery';
 @import 'components/signup';
 @import 'components/news-items';
 @import 'components/news-post';
+@import 'components/pulse';

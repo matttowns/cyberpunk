@@ -25,6 +25,8 @@ body{
 
 .home-header{
     position:relative;
+    background-color:black;
+
 }
 
 .header-content{
@@ -47,36 +49,49 @@ body{
             margin:38px 50px;
         }
         .header-logo-left{
-            width:50%;
+            width:35%;
             img{
                 display:block;
                 max-width:151px;
                 max-height:51px;
                 width: auto;
                 height: auto; 
+                width:100%;
+                height:100%;
             }
-         
         }
         .header-logo-right{
             display:block;
-            width:50%;
-            height:69px;
+            width:165px;
+            height:53px;
             position:relative;
             display:flex;
+            margin-bottom:10px;
+            @include breakpoint(sd){
+            }
+            @include breakpoint(md){
+            }
             img{
-                width:200px;
-                height:69px;
+                position:absolute;
+                right:0;
+                width:125px;
+                height:53px;
                 max-height:100%;
                 max-width:100%;
+                @include breakpoint(md){
+                    visibility:hidden;
+                }
             }
             .header-logo-right-canvas{
-
+                visibility:hidden;
                 max-height:100%;
                 max-width:100%;
-                width:200px;
+                width:165px;
+                height:53px;
                 margin-left:auto;
-
-
+                @include breakpoint(md){
+                    visibility:visible;
+                }
             }
         }
         .header-logo-main{
@@ -89,7 +104,6 @@ body{
             @include breakpoint(sd){
                 display:none;
             }
-            
         }
     }
 
